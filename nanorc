@@ -61,6 +61,8 @@ set autoindent
 # set historylog
 
 ## Display a "scrollbar" on the righthand side of the edit window.
+## I would like to use this option, but it's broken on nano 5.0
+## (it causes a floating point exception when you type in an empty file)
 # set indicator
 
 ## Scroll the buffer contents per half-screen instead of per line.
