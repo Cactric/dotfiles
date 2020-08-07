@@ -1,16 +1,20 @@
 # Dependencies for this zshrc:
-# zsh-autosuggestions       Arch Linux package name is zsh-autosuggestions
-# zsh-syntax-highlighting   Arch Linux package name is zsh-syntax-highlighting
+# zsh-autosuggestions       
+#       Arch Linux package name is zsh-autosuggestions
+#       Ubuntu package name is also zsh-autosuggestions
+# zsh-syntax-highlighting
+#       Arch Linux package name is zsh-syntax-highlighting
+#       Ubuntu package name is also zsh-syntax-highlighting
+#
 # systemd   For detecting the state of the system with `systemctl is-system-running`
-
-
+# if your distro doesn't have systemd, then you probably know already
 
 # Enable colors and change prompt:
 autoload -U colors && colors
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 PS1="%B%{$fg[green]%}%~%{$fg[yellow]%}$%{$reset_color%}%b "
 
-# Exports
+# Exports of environment variables
 
 # Set editor to nano
 export EDITOR=nano
@@ -28,9 +32,9 @@ echo -e $greeting$date$endofgreeting
 sysstatus=$(systemctl is-system-running)
 
 if [ "$sysstatus" = running ]; then
-	true
+    true
 else
-	echo -e "\033[1m$fg[red]System is $sysstatus! (see systemctl list-units --failed)\033[0m"
+    echo -e "\033[1m$fg[red]System is $sysstatus! (see systemctl list-units --failed)\033[0m"
 fi
 
 unset greeting
@@ -113,11 +117,11 @@ key[Shift-Tab]="${terminfo[kcbt]}"
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
-	autoload -Uz add-zle-hook-widget
-	function zle_application_mode_start { echoti smkx }
-	function zle_application_mode_stop { echoti rmkx }
-	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
-	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+    autoload -Uz add-zle-hook-widget
+    function zle_application_mode_start { echoti smkx }
+    function zle_application_mode_stop { echoti rmkx }
+    add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
+    add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
 
