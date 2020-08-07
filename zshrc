@@ -1,3 +1,10 @@
+# Dependencies for this zshrc:
+# zsh-autosuggestions       Arch Linux package name is zsh-autosuggestions
+# zsh-syntax-highlighting   Arch Linux package name is zsh-syntax-highlighting
+# systemd   For detecting the state of the system with `systemctl is-system-running`
+
+
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "

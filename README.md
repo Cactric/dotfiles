@@ -8,5 +8,6 @@ destinations from the files in this repo
 
 * zshrc → ~/.zshrc
     * This zshrc will create ~/.config/zsh/history
+    * This zshrc has some dependencies, see the file for details
 * aliasrc → ~/.config/zsh/aliasrc
 * nanorc → ~/.config/nano/nanorc
