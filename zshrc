@@ -23,7 +23,7 @@ export VISUAL=nano
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 #Greeting
-hostname=$(cat /etc/hostname)
+hostname=$(hostname)
 date=$(date)
 greeting="\033[1m* You are $fg[yellow]${USER} $fg[white]on $fg[cyan]${hostname}$fg[white] using $fg[magenta]zsh$fg[white] ("
 endofgreeting=")\033[0m"
