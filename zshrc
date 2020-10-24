@@ -1,5 +1,5 @@
 # Dependencies for this zshrc:
-# zsh-autosuggestions       
+# zsh-autosuggestions
 #       Arch Linux package name is zsh-autosuggestions
 #       Ubuntu package name is also zsh-autosuggestions
 # zsh-syntax-highlighting
@@ -41,8 +41,6 @@ unset greeting
 unset date
 unset endofgreeting
 unset sysstatus
-
-#cowsay "You have a terminal illness"
 
 #History
 HISTSIZE=5000
@@ -139,4 +137,4 @@ bindkey "[1;5D" backward-word
 bindkey "[3;5~" delete-word
 bindkey "" backward-delete-word
 
-#set correct
+set correct
