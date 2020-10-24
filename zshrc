@@ -22,6 +22,17 @@ export VISUAL=nano
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# Check if it is a login shell and if it is, display .config/zsh/motd
+# Same could be achived with the file /etc/motd but that will affect all users
+# and shells
+
+# Picture as of time of writing is of: (sha1: c1b1f54f95b84705c18e71132a3cfbde1eb91e05)
+# A false colour image of Cassiopeia A (Cas A) using observations from both the
+# Hubble and Spitzer telescopes as well as the Chandra X-ray Observatory
+if [ "$0" = "-zsh" ]; then
+    cat ~/.config/zsh/motd
+fi
+
 #Greeting
 hostname=$(hostname)
 date=$(date)

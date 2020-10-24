@@ -8,8 +8,9 @@
 mkdir -p ~/.config/zsh
 mkdir -p ~/.config/nano
 
-# ln -rs: -r means relative links
+# ln -sr: -r means relative links
 
-ln -rs $PWD/zshrc ~/.zshrc
-ln -rs $PWD/aliasrc ~/.config/zsh/aliasrc
-ln -rs $PWD/nanorc ~/.config/nano/nanorc
+ln -sr $PWD/zshrc ~/.zshrc
+ln -sr $PWD/aliasrc ~/.config/zsh/aliasrc
+ln -sr $PWD/nanorc ~/.config/nano/nanorc
+ln -sr $PWD/motd ~/.config/zsh/motd
