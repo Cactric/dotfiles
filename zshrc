@@ -12,7 +12,7 @@
 # Enable colors and change prompt:
 autoload -U colors && colors
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-PS1="%B%{$fg[green]%}%~%{$fg[yellow]%}$%{$reset_color%}%b "
+PS1="%B%{$fg[cyan]%}%M: %{$fg[green]%}%~%{$fg[yellow]%}$%{$reset_color%}%b "
 
 # Exports of environment variables
 
@@ -21,10 +21,6 @@ export EDITOR=nano
 export VISUAL=nano
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# Check if it is a login shell and if it is, display .config/zsh/motd
-# Same could be achived with the file /etc/motd but that will affect all users
-# and shells
 
 #Greeting
 hostname=$(hostname)
