@@ -34,7 +34,7 @@ sysstatus=$(systemctl is-system-running)
 if [ "$sysstatus" = running ]; then
     true
 else
-    echo -e "\033[1m$fg[red]System is $sysstatus! (see systemctl list-units --failed)\033[0m"
+    echo -e "\033[1m$fg[red]System is $sysstatus! (see systemctl --state=failed)\033[0m"
 fi
 
 unset greeting
