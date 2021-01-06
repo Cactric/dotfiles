@@ -23,8 +23,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias itest="ping -c 16 google.co.uk"
 
-alias vialias="$EDITOR /home/cactric/.zsh/aliasrc; zsh"
-alias aliasedit="$EDITOR /home/cactric/.zsh/aliasrc; zsh"
+alias vialias="$EDITOR /home/cactric/.config/zsh/aliasrc; zsh"
+alias aliasedit="$EDITOR /home/cactric/.config/zsh/aliasrc; zsh"
 alias sl="sl -e"
 
 #Interactive and verbose mode for cp, mv and rm
