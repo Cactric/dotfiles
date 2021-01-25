@@ -30,12 +30,12 @@ alias sl="sl -e"
 #Interactive and verbose mode for cp, mv and rm
 alias cp="cp -iv"
 alias mv="mv -iv"
-alias rm="rm -Iv"
+alias rm="rm -Iv --one-file-system"
+
+#Add colour to the ip command
+alias ip="ip -c=auto -h"
 
 alias bin="trash-put -v"
 
 #Add a command to empty the swap back to RAM by disabling it and then turn it back on
 #alias swapstop="sudo swapoff -av && echo 'Swap Emptied' && notify-send 'Swap Emptied' && sudo swapon -av"
-
-#Alias yay to paru
-#alias yay="sl -c; paru"
