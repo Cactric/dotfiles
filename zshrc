@@ -43,8 +43,8 @@ unset endofgreeting
 unset sysstatus
 
 #History
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=50000
+SAVEHIST=50000
 HISTFILE=~/.config/zsh/history
 
 # Basic auto/tab complete:
