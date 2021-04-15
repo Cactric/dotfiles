@@ -11,6 +11,21 @@
 
 # Enable colors and change prompt:
 autoload -U colors && colors
+
+# Get battery status (if applicable)
+BattDir=/sys/class/power_supply/BAT1
+if [ -d $BattDir ]; then
+	BattStatus=$(cat $BattDir/status)
+	#BattColour if it isn't charging nor discharging
+	BattColour="$fg[white]"
+	if [ "$BattStatus" = "Charging" ]; then
+		BattColour="$fg[green]"
+	if [ "$BattStatus" = "Discharging" ]; then
+		BattColour="$fg[red]"
+	BattPrompt="[$BattColour$(cat $BattDir/capacity)]"
+echo $BattPrompt
+
+# Set the prompt
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 PS1="%B%{$fg[cyan]%}%M: %{$fg[green]%}%~%{$fg[yellow]%}$%{$reset_color%}%b "
 
