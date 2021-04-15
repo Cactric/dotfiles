@@ -38,4 +38,13 @@ alias ip="ip -c=auto -h"
 alias bin="trash-put -v"
 
 #Add a command to empty the swap back to RAM by disabling it and then turn it back on
-#alias swapstop="sudo swapoff -av && echo 'Swap Emptied' && notify-send 'Swap Emptied' && sudo swapon -av"
+<<<<<<< HEAD
+=======
+alias swapstop="sudo swapoff -av && echo 'Swap Emptied' && notify-send 'Swap Emptied' && sudo swapon -av"
+
+#Alias yay to paru
+#alias yay="sl -c; paru"
+
+#Ugh, python2
+alias python="echo 'Ew, python 2'; python3"
+>>>>>>> 9c034b7... Change paths, enable swapstop and add python alias
