@@ -69,6 +69,10 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+# Source the command not found handler on Ubuntu
+source /etc/zsh_command_not_found 2> /dev/null
+
 #source /usr/share/autojump/autojump.zsh 2>/dev/null
 
 # set PATH so it includes user's private bin if it exists
