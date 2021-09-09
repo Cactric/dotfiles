@@ -23,8 +23,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias itest="ping -c 16 google.co.uk"
 
-alias vialias="$EDITOR /home/cactric/.config/zsh/aliasrc; zsh"
-alias aliasedit="$EDITOR /home/cactric/.config/zsh/aliasrc; zsh"
+alias vialias="$EDITOR /home/cactric/.config/zsh/aliasrc; source /home/cactric/.config/zsh/aliasrc"
+alias aliasedit="$EDITOR /home/cactric/.config/zsh/aliasrc; source /home/cactric/.config/zsh/aliasrc"
 alias sl="sl -e"
 
 #Interactive and verbose mode for cp, mv and rm
@@ -45,3 +45,9 @@ alias swapstop="sudo swapoff -av && echo 'Swap Emptied' && notify-send 'Swap Emp
 
 #Ugh, python2. Only really needed on Ubuntu
 alias python="python3"
+
+#Add an alias for systemctl --user
+alias usystemctl="systemctl --user"
+
+#Try to fix wifi issues by reloading the kernel module
+alias fixwifi="sudo modprobe -r rtl8821ae && sleep 2 && sudo modprobe rtl8821ae"
