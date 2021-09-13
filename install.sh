@@ -6,6 +6,7 @@
 # -p will make the parent directories as well and won't throw an error if they
 # already exist.
 mkdir -p ~/.config/zsh
+mkdir -p ~/.local/state/zsh
 mkdir -p ~/.config/nano
 
 # ln -sr: -r means relative links

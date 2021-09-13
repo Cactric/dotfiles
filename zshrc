@@ -47,7 +47,7 @@ unset sysstatus
 #History
 HISTSIZE=50000
 SAVEHIST=50000
-HISTFILE=~/.config/zsh/history
+HISTFILE=~/.local/state/zsh/history
 
 # Basic auto/tab complete:
 autoload -U compinit
