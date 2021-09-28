@@ -27,6 +27,8 @@ alias vialias="$EDITOR /home/cactric/.config/zsh/aliasrc; source /home/cactric/.
 alias aliasedit="$EDITOR /home/cactric/.config/zsh/aliasrc; source /home/cactric/.config/zsh/aliasrc"
 alias sl="sl -e"
 
+alias checkupdates="checkupdates; if [ \"$(echo $?)\"=\"2\" ]; then echo No updates are avaliable; fi"
+
 #Interactive and verbose mode for cp, mv and rm
 alias cp="cp -iv"
 alias mv="mv -iv"
