@@ -53,5 +53,8 @@ alias usystemctl="systemctl --user"
 #Try to fix wifi issues by reloading the kernel module
 alias fixwifi="sudo modprobe -r rtl8821ae && sleep 2 && sudo modprobe rtl8821ae"
 
-#Alias for gcc with the options uni likes
-alias unigcc="gcc -Wall -ansi -pedantic-errors"
+#~Alias~ function for gcc with the options uni likes
+#alias unigcc="gcc -Wall -ansi -pedantic-errors"
+unigcc() {
+    gcc -Wall -ansi -pedantic-errors -o $(echo $1 | sed "s/.c//") $1
+}
