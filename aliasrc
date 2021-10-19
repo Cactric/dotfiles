@@ -53,5 +53,5 @@ alias usystemctl="systemctl --user"
 #~Alias~ function for gcc with the options uni likes
 #alias unigcc="gcc -Wall -ansi -pedantic-errors"
 unigcc() {
-    gcc -Wall -ansi -pedantic-errors -o $(echo $1 | sed "s/.c//") $1
+    gcc -Wall -ansi -pedantic-errors -o $(echo $1 | sed "s/\.c$//") $@
 }
