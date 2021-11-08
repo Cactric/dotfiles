@@ -76,3 +76,23 @@ fi
 
 # Add ~/.local/bin to the path
 [ -d "$HOME/.local/bin" ] && PATH="$HOME.local/bin:$PATH"
+
+# Some key bindings
+# Ctrl-→
+bindkey "[1;5C" forward-word
+# Ctrl-←
+bindkey "[1;5D" backward-word
+# Ctrl-Backspace
+bindkey "" backward-delete-word
+# Ctrl-Delete
+bindkey "[3;5~" delete-word
+# Shift-Tab
+bindkey "[Z" reverse-menu-complete
+# Home
+bindkey "[H" beginning-of-line
+# End
+bindkey "[F" end-of-line
+# Insert
+bindkey "[2~" overwrite-mode
+# Delete
+bindkey "[3~" delete-char
