@@ -44,9 +44,6 @@ alias swapstop="sudo swapoff -av && echo 'Swap Emptied' && notify-send 'Swap Emp
 #Alias yay to paru
 #alias yay="sl -c; paru"
 
-#Ugh, python2. Only really needed on Ubuntu
-alias python="python3"
-
 #Add an alias for systemctl --user
 alias usystemctl="systemctl --user"
 
