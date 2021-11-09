@@ -74,6 +74,16 @@ else
    source /etc/zsh_command_not_found
 fi
 
+# Make the up key search through history with what was already written
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+# Rebind the up/down keys for it
+bindkey "[A" up-line-or-beginning-search
+bindkey "[B" down-line-or-beginning-search
+
+
 # Add ~/.local/bin to the path
 [ -d "$HOME/.local/bin" ] && PATH="$HOME.local/bin:$PATH"
 
