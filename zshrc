@@ -85,7 +85,7 @@ bindkey "[B" down-line-or-beginning-search
 
 
 # Add ~/.local/bin to the path
-[ -d "$HOME/.local/bin" ] && PATH="$HOME.local/bin:$PATH"
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 
 # Some key bindings
 # Ctrl-→
