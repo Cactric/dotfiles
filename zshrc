@@ -31,7 +31,7 @@ export VISUAL=nano
 PS1="%B%{$fg[cyan]%}%M: %{$fg[green]%}%~%{$fg[yellow]%}$%{$reset_color%}%b "
 
 # Greeting
-hostname=$(hostnamectl hostname)
+hostname=$(cat /etc/hostname)
 date=$(date)
 greeting="\033[1m* You are $fg[yellow]${USER} $fg[white]on $fg[cyan]${hostname}$fg[white] using $fg[magenta]zsh$fg[white] ("
 endofgreeting=")\033[0m"
