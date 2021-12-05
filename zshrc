@@ -110,4 +110,7 @@ bindkey "[2~" overwrite-mode
 bindkey "[3~" delete-char
 
 # Force silly programs to support XDG base directories instead of littering ~
+if [ -z "$XDG_CONFIG_HOME" ] ; then
+    XDG_CONFIG_HOME="~/.config"
+fi
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
