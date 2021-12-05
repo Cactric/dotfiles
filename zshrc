@@ -71,7 +71,9 @@ else
    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
    # Source Ubuntu's command not found handler as well
-   source /etc/zsh_command_not_found
+   if [ -f "/etc/zsh_command_not_found" ]; then
+       source /etc/zsh_command_not_found
+   fi
 fi
 
 # Make the up key search through history with what was already written
@@ -106,3 +108,6 @@ bindkey "[F" end-of-line
 bindkey "[2~" overwrite-mode
 # Delete
 bindkey "[3~" delete-char
+
+# Force silly programs to support XDG base directories instead of littering ~
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
