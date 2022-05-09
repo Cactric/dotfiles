@@ -31,7 +31,8 @@ export VISUAL=nano
 PS1="%B%{$fg[cyan]%}%M: %{$fg[green]%}%~%{$fg[yellow]%}$%{$reset_color%}%b "
 
 # Greeting
-hostname=$(cat /etc/hostname)
+hostname="$HOST" # in bash, this would be $HOSTNAME
+                 # not that that matters for a .zshrc
 date=$(date)
 greeting="\033[1m* You are $fg[yellow]${USER} $fg[white]on $fg[cyan]${hostname}$fg[white] using $fg[magenta]zsh$fg[white] ("
 endofgreeting=")\033[0m"
