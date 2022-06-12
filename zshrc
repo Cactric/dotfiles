@@ -27,14 +27,16 @@ autoload -U colors && colors
 export EDITOR=nano
 export VISUAL=nano
 
-# Set the prompt
-PS1="%B%{$fg[cyan]%}%M: %{$fg[green]%}%~%{$fg[yellow]%}$%{$reset_color%}%b "
+# Load the machine colours
+source ~/.config/zsh/machine-colours
 
+# Set the prompt
+PS1="%B%{%F{$HOSTNAME_COLOUR}%}%M: %{%F{$PATH_COLOUR}%}%~%{%F{$END_OF_PROMPT_COLOUR}%}$%{$reset_color%}%b "
 # Greeting
 hostname="$HOST" # in bash, this would be $HOSTNAME
                  # not that that matters for a .zshrc
 date=$(date)
-greeting="\033[1m* You are $fg[yellow]${USER} $fg[white]on $fg[cyan]${hostname}$fg[white] using $fg[magenta]zsh$fg[white] ("
+greeting="\033[1m* You are $fg[$USERNAME_COLOUR]${USER} $fg[white]on $fg[$HOSTNAME_COLOUR]${hostname}$fg[white] using $fg[$SHELLNAME_COLOUR]zsh$fg[white] ("
 endofgreeting=")\033[0m"
 echo -e $greeting$date$endofgreeting
 
@@ -49,6 +51,8 @@ else
 fi
 
 unset greeting date endofgreeting sysstatus
+unset USERNAME_COLOUR HOSTNAME_COLOUR SHELLNAME_COLOUR PATH_COLOUR END_OF_PROMPT_COLOUR
+
 
 # Load aliases and shortcuts from ~/.config/zsh
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
@@ -111,7 +115,5 @@ bindkey "[2~" overwrite-mode
 bindkey "[3~" delete-char
 
 # Force silly programs to support XDG base directories instead of littering ~
-if [ -z "$XDG_CONFIG_HOME" ] ; then
-    XDG_CONFIG_HOME="~/.config"
-fi
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export GOPATH="$HOME/.local/share/go"

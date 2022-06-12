@@ -14,3 +14,4 @@ mkdir -p ~/.config/nano
 ln -sr $PWD/zshrc ~/.zshrc
 ln -sr $PWD/aliasrc ~/.config/zsh/aliasrc
 ln -sr $PWD/nanorc ~/.config/nano/nanorc
+ln -sr $PWD/machine-colours ~/.config/zsh/machine-colours

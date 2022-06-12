@@ -1,0 +1,18 @@
+# These are some example machine colours
+# They'll be used to colour in the hostname and username, etc.
+# Valid colour names are from the zsh colors function:
+# * black
+# * blue
+# * cyan
+# * grey (or gray)
+# * green
+# * magenta
+# * red
+# * white
+# * yellow
+export USERNAME_COLOUR=yellow
+export HOSTNAME_COLOUR=cyan
+export SHELLNAME_COLOUR=magenta
+export PATH_COLOUR=green
+# The $ at the end of the prompt (or # if you're root)
+export END_OF_PROMPT_COLOUR=yellow
