@@ -31,7 +31,7 @@ export VISUAL=nano
 source ~/.config/zsh/machine-colours
 
 # Set the prompt
-PS1="%B%{%F{$HOSTNAME_COLOUR}%}%M: %{%F{$PATH_COLOUR}%}%~%{%F{$END_OF_PROMPT_COLOUR}%}$%{$reset_color%}%b "
+PS1="%B%{%F{$HOSTNAME_COLOUR}%}%M: %{%F{$PATH_COLOUR}%}%~%{%F{$END_OF_PROMPT_COLOUR}%}$%f%b "
 # Greeting
 hostname="$HOST" # in bash, this would be $HOSTNAME
                  # not that that matters for a .zshrc
