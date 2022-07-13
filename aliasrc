@@ -1,11 +1,9 @@
-#From .bashrc
+# Zsh aliases
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --human-readable --color=auto -v'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -16,12 +14,6 @@ fi
 alias ll='ls -alhFv'
 alias la='ls -Av'
 alias l='ls -CFv'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-alias itest="ping -c 16 google.co.uk"
 
 alias vialias="$EDITOR /home/cactric/.config/zsh/aliasrc; source /home/cactric/.config/zsh/aliasrc"
 alias aliasedit="$EDITOR /home/cactric/.config/zsh/aliasrc; source /home/cactric/.config/zsh/aliasrc"
@@ -40,12 +32,6 @@ alias ip="ip -c=auto -h"
 
 #Add a command to empty the swap back to RAM by disabling it and then turn it back on
 alias swapstop="sudo swapoff -av && echo 'Swap Emptied' && notify-send 'Swap Emptied' && sudo swapon -av"
-
-#Alias yay to paru
-#alias yay="sl -c; paru"
-
-#Add an alias for systemctl --user
-alias usystemctl="systemctl --user"
 
 alias timers="echo -e 'System timers:\n\n'; systemctl list-timers --all --no-pager; echo -e 'User timers:\n\n'; systemctl --user list-timers --all --no-pager"
 
