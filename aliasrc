@@ -35,6 +35,8 @@ alias swapstop="sudo swapoff -av && echo 'Swap Emptied' && notify-send 'Swap Emp
 
 alias timers="echo -e 'System timers:\n\n'; systemctl list-timers --all --no-pager; echo -e 'User timers:\n\n'; systemctl --user list-timers --all --no-pager"
 
+alias vimdot="EDITOR=$(command -v $EDITOR) vimdot"
+
 #~Alias~ function for gcc with the options uni likes
 #alias unigcc="gcc -Wall -ansi -pedantic-errors"
 unigcc() {
