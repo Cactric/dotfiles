@@ -15,8 +15,8 @@ alias ll='ls -alhFv'
 alias la='ls -Av'
 alias l='ls -CFv'
 
-alias vialias="$EDITOR /home/cactric/.config/zsh/aliasrc; source /home/cactric/.config/zsh/aliasrc"
-alias aliasedit="$EDITOR /home/cactric/.config/zsh/aliasrc; source /home/cactric/.config/zsh/aliasrc"
+alias vialias="\$EDITOR /home/cactric/.config/zsh/aliasrc; source /home/cactric/.config/zsh/aliasrc"
+alias aliasedit="\$EDITOR /home/cactric/.config/zsh/aliasrc; source /home/cactric/.config/zsh/aliasrc"
 alias sl="sl -e"
 
 #Interactive and verbose mode for cp, mv and rm
@@ -35,7 +35,7 @@ alias swapstop="sudo swapoff -av && echo 'Swap Emptied' && notify-send 'Swap Emp
 
 alias timers="echo -e 'System timers:\n\n'; systemctl list-timers --all --no-pager; echo -e 'User timers:\n\n'; systemctl --user list-timers --all --no-pager"
 
-alias vimdot="EDITOR=$(command -v $EDITOR) vimdot"
+alias vimdot="EDITOR=\$(command -v \$EDITOR) vimdot"
 
 #~Alias~ function for gcc with the options uni likes
 #alias unigcc="gcc -Wall -ansi -pedantic-errors"
