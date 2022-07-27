@@ -32,6 +32,7 @@ source ~/.config/zsh/machine-colours
 
 # Set the prompt
 PS1="%B%{%F{$HOSTNAME_COLOUR}%}%M: %{%F{$PATH_COLOUR}%}%~%{%F{$END_OF_PROMPT_COLOUR}%}$%f%b "
+RPS1="%(?..%B%F{$RETURN_COLOUR} Returned %?%f%b )"
 # Greeting
 hostname="$HOST" # in bash, this would be $HOSTNAME
                  # not that that matters for a .zshrc
@@ -51,7 +52,7 @@ else
 fi
 
 unset greeting date endofgreeting sysstatus
-unset USERNAME_COLOUR HOSTNAME_COLOUR SHELLNAME_COLOUR PATH_COLOUR END_OF_PROMPT_COLOUR
+unset USERNAME_COLOUR HOSTNAME_COLOUR SHELLNAME_COLOUR PATH_COLOUR END_OF_PROMPT_COLOUR RETURN_COLOUR
 
 
 # Load aliases and shortcuts from ~/.config/zsh
