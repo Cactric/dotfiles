@@ -17,7 +17,7 @@ mkdir -p "$CONFIG/neofetch"
 
 # ln -sr: -r means relative links
 
-ln -sr "$PWD/zshrc" "~/.zshrc"
+ln -sr "$PWD/zshrc" "$HOME/.zshrc"
 ln -sr "$PWD/aliasrc" "$CONFIG/zsh/aliasrc"
 ln -sr "$PWD/nanorc" "$CONFIG/nano/nanorc"
 ln -sr "$PWD/machine-colours" "$CONFIG/zsh/machine-colours"
