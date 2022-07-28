@@ -1,11 +1,11 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.local/state/zsh/history
+HISTFILE="${XDG_STATE_HOME:-'~/.local/state'}"/zsh/history
 HISTSIZE=50000
 SAVEHIST=50000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/cactric/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -28,7 +28,7 @@ export EDITOR=nano
 export VISUAL=nano
 
 # Load the machine colours
-source ~/.config/zsh/machine-colours
+source ”${XDG_CONFIG_HOME:-'~/.config'}/zsh/machine-colours"
 
 # Set the prompt
 PS1="%B%{%F{$HOSTNAME_COLOUR}%}%M: %{%F{$PATH_COLOUR}%}%~%{%F{$END_OF_PROMPT_COLOUR}%}$%f%b "
@@ -56,7 +56,8 @@ unset USERNAME_COLOUR HOSTNAME_COLOUR SHELLNAME_COLOUR PATH_COLOUR END_OF_PROMPT
 
 
 # Load aliases and shortcuts from ~/.config/zsh
-[ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
+ALIASRC="${XDG_CONFIG_HOME:-'~/.config'}/zsh/aliasrc"
+[ -f "$ALIASRC" ] && source "$ALIASRC"
 
 # Enable autocompletion
 autoload -Uz compinit
