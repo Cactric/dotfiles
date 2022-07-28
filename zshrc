@@ -1,5 +1,5 @@
 # Lines configured by zsh-newuser-install
-HISTFILE="${XDG_STATE_HOME:-'~/.local/state'}"/zsh/history
+HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}"/zsh/history
 HISTSIZE=50000
 SAVEHIST=50000
 bindkey -e
@@ -28,7 +28,7 @@ export EDITOR=nano
 export VISUAL=nano
 
 # Load the machine colours
-source ”${XDG_CONFIG_HOME:-'~/.config'}/zsh/machine-colours"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/machine-colours"
 
 # Set the prompt
 PS1="%B%{%F{$HOSTNAME_COLOUR}%}%M: %{%F{$PATH_COLOUR}%}%~%{%F{$END_OF_PROMPT_COLOUR}%}$%f%b "
@@ -56,7 +56,7 @@ unset USERNAME_COLOUR HOSTNAME_COLOUR SHELLNAME_COLOUR PATH_COLOUR END_OF_PROMPT
 
 
 # Load aliases and shortcuts from ~/.config/zsh
-ALIASRC="${XDG_CONFIG_HOME:-'~/.config'}/zsh/aliasrc"
+ALIASRC="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliasrc"
 [ -f "$ALIASRC" ] && source "$ALIASRC"
 
 # Enable autocompletion
@@ -117,5 +117,5 @@ bindkey "[2~" overwrite-mode
 bindkey "[3~" delete-char
 
 # Force silly programs to support XDG base directories instead of littering ~
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-export GOPATH="$HOME/.local/share/go"
+export NPM_CONFIG_USERCONFIG="${XDG_DATA_HOME:-$HOME/.local/share}/npm/npmrc"
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
