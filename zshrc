@@ -59,10 +59,6 @@ unset USERNAME_COLOUR HOSTNAME_COLOUR SHELLNAME_COLOUR PATH_COLOUR END_OF_PROMPT
 ALIASRC="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliasrc"
 [ -f "$ALIASRC" ] && source "$ALIASRC"
 
-# Enable autocompletion
-autoload -Uz compinit
-compinit
-
 # Autocompletion menu
 zstyle ':completion:*' menu select
 
