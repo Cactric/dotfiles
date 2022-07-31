@@ -8,7 +8,7 @@ bindkey -e
 zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
-compinit
+compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}"/zcompdump-$ZSH_VERSION
 # End of lines added by compinstall
 
 # Start of lines added by me!
