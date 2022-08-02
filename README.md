@@ -14,6 +14,6 @@ destinations from the files in this repo
 * machine-colours → ~/.config/zsh/machine-colours
 * neofetch_config.conf → ~/.config/neofetch/config.conf
 
-* _if `XDG_CONFIG_HOME` is set, anything I said goes in ~/.config goes there instead_
-* _if `XDG_STATE_HOME` is set, the history files goes there instead of ~/.local/state_
+* _if `XDG_CONFIG_HOME` is set, anything I said goes in `~/.config` goes there instead_
+* _if `XDG_STATE_HOME` is set, the history files goes there instead of `~/.local/state`_
 
