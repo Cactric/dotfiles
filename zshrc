@@ -37,7 +37,7 @@ RPS1="%(?..%B%F{$RETURN_COLOUR} Returned %?%f%b )"
 hostname="$HOST" # in bash, this would be $HOSTNAME
                  # not that that matters for a .zshrc
 date=$(date)
-greeting="\033[1m* You are $fg[$USERNAME_COLOUR]${USER} $fg[white]on $fg[$HOSTNAME_COLOUR]${hostname}$fg[white] using $fg[$SHELLNAME_COLOUR]zsh$fg[white] ("
+greeting="\033[1m$fg[white]* You are $fg[$USERNAME_COLOUR]${USER} $fg[white]on $fg[$HOSTNAME_COLOUR]${hostname}$fg[white] using $fg[$SHELLNAME_COLOUR]zsh$fg[white] ("
 endofgreeting=")\033[0m"
 echo -e $greeting$date$endofgreeting
 
