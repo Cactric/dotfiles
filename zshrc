@@ -115,3 +115,8 @@ bindkey "[3~" delete-char
 # Force silly programs to support XDG base directories instead of littering ~
 export NPM_CONFIG_USERCONFIG="${XDG_DATA_HOME:-$HOME/.local/share}/npm/npmrc"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+
+# Support a local zsh config taht isn't tracked in git
+if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/zsh/localzshrc ]]; then
+    source "${XDG_CONFIG_HOME:-$HOME/.config}"/zsh/localzshrc
+fi
