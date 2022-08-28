@@ -30,6 +30,9 @@ alias sudo="sudo "
 #Add colour to the ip command
 alias ip="ip -c=auto -h"
 
+#Add colour to less
+alias less="less --use-color"
+
 #Add a command to empty the swap back to RAM by disabling it and then turn it back on
 alias swapstop="sudo swapoff -av && echo 'Swap Emptied' && notify-send 'Swap Emptied' && sudo swapon -av"
 
