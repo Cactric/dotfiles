@@ -17,6 +17,8 @@ compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}"/zcompdump-$ZSH_VERSION
 # KDE apps using the Konsole widget (like Dolphin and Kate) seem to expect this
 setopt hist_ignore_space
 
+# Replace duplicates in the history file
+setopt histignorealldups
 # Correct commands
 setopt correct
 
