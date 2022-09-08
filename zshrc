@@ -118,6 +118,7 @@ bindkey "[3~" delete-char
 export NPM_CONFIG_USERCONFIG="${XDG_DATA_HOME:-$HOME/.local/share}/npm/npmrc"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export GRADLE_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"/gradle
+export STACK_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}"/stack
 export GHCUP_USE_XDG_DIRS=1
 
 # Support a local zsh config that isn't tracked in git
