@@ -17,3 +17,4 @@ export PATH_COLOUR=green
 # The $ at the end of the prompt (or # if you're root)
 export END_OF_PROMPT_COLOUR=yellow
 export RETURN_COLOUR=red
+export TIME_COLOUR=cyan

@@ -24,6 +24,7 @@ setopt correct
 
 # Colours!
 autoload -U colors && colors
+autoload -Uz add-zsh-hook
 
 # Export EDITOR variable
 export EDITOR=nano
@@ -34,7 +35,39 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/machine-colours"
 
 # Set the prompt
 PS1="%B%{%F{$HOSTNAME_COLOUR}%}%M: %{%F{$PATH_COLOUR}%}%3~%{%F{$END_OF_PROMPT_COLOUR}%}$%f%b "
-RPS1="%(?..%B%F{$RETURN_COLOUR} Returned %?%f%b )"
+
+# Reverse prompt showing the time it took and the return code
+function reset_rps1_precmd() {
+  RPS1="%(?..%B%F{$RETURN_COLOUR} Returned %?%f%b )"
+}
+
+function timer_precmd() {
+  if [ $timer ]; then
+    local now=$(date +%s%3N)
+    local d_ms=$(($now-$timer))
+    local d_s=$((d_ms / 1000))
+    local s=$((d_s % 60))
+    local m=$(((d_s / 60) % 60))
+    local h=$((d_s / 3600))
+    if ((h > 0)); then elapsed=${h}h${m}m
+    elif ((m > 0)); then elapsed=${m}m${s}s
+    elif ((s >= 5)); then elapsed=${s}s
+    else unset timer; return
+    fi
+    
+    RPS1="%F{$TIME_COLOUR}Took ${elapsed}%{$reset_color%}${RPS1}"
+    unset timer
+  fi
+}
+
+function timer_preexec() {
+  timer=$(date +%s%3N)
+}
+
+add-zsh-hook -Uz precmd reset_rps1_precmd
+add-zsh-hook -Uz precmd timer_precmd
+add-zsh-hook -Uz preexec timer_preexec
+
 # Greeting
 hostname="$HOST" # in bash, this would be $HOSTNAME
                  # not that that matters for a .zshrc
@@ -54,7 +87,7 @@ else
 fi
 
 unset greeting date endofgreeting sysstatus
-unset USERNAME_COLOUR HOSTNAME_COLOUR SHELLNAME_COLOUR PATH_COLOUR END_OF_PROMPT_COLOUR RETURN_COLOUR
+#unset USERNAME_COLOUR HOSTNAME_COLOUR SHELLNAME_COLOUR PATH_COLOUR END_OF_PROMPT_COLOUR RETURN_COLOUR TIME_COLOUR
 
 
 # Load aliases and shortcuts from ~/.config/zsh
@@ -89,7 +122,6 @@ zle -N down-line-or-beginning-search
 # Rebind the up/down keys for it
 bindkey "[A" up-line-or-beginning-search
 bindkey "[B" down-line-or-beginning-search
-
 
 # Add ~/.local/bin to the path
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
