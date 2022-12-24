@@ -114,37 +114,66 @@ else
    fi
 fi
 
+# Add ~/.local/bin to the path
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+
 # Make the up key search through history with what was already written
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-# Rebind the up/down keys for it
-bindkey "[A" up-line-or-beginning-search
-bindkey "[B" down-line-or-beginning-search
+## Key bindings
 
-# Add ~/.local/bin to the path
-[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+# create a zkbd compatible hash
+typeset -g -A key
 
-# Some key bindings
+key[Home]="${terminfo[khome]}"
+key[End]="${terminfo[kend]}"
+key[Insert]="${terminfo[kich1]}"
+key[Backspace]="${terminfo[kbs]}"
+key[Delete]="${terminfo[kdch1]}"
+key[Up]="${terminfo[kcuu1]}"
+key[Down]="${terminfo[kcud1]}"
+key[Left]="${terminfo[kcub1]}"
+key[Right]="${terminfo[kcuf1]}"
+key[PageUp]="${terminfo[kpp]}"
+key[PageDown]="${terminfo[knp]}"
+key[Shift-Tab]="${terminfo[kcbt]}"
+
+key[Control-Left]="${terminfo[kLFT5]}"
+key[Control-Right]="${terminfo[kRIT5]}"
+key[Control-Delete]="${terminfo[kDC5]}"
+
+# Rebind the up/down keys for history search
+[[ -n "${key[Up]}" ]] && bindkey -- "${key[Up]}" up-line-or-beginning-search
+[[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
+
 # Ctrl-→
-bindkey "[1;5C" forward-word
+[[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
 # Ctrl-←
-bindkey "[1;5D" backward-word
-# Ctrl-Backspace
-bindkey "" backward-delete-word
+[[ -n "${key[Control-Left]}" ]] && bindkey -- "${key[Control-Left]}" backward-word
 # Ctrl-Delete
-bindkey "[3;5~" delete-word
+[[ -n "${key[Control-Delete]}" ]] && bindkey -- "${key[Control-Delete]}" delete-word
 # Shift-Tab
-bindkey "[Z" reverse-menu-complete
+[[ -n "${key[Shift-Tab]}" ]] && bindkey -- "${key[Shift-Tab]}" reverse-menu-complete
 # Home
-bindkey "[H" beginning-of-line
+[[ -n "${key[Home]}" ]] && bindkey -- "${key[Home]}" beginning-of-line
 # End
-bindkey "[F" end-of-line
+[[ -n "${key[End]}" ]] && bindkey -- "${key[End]}" end-of-line
 # Insert
-bindkey "[2~" overwrite-mode
+[[ -n "${key[Insert]}" ]] && bindkey -- "${key[Insert]}" overwrite-mode
 # Delete
-bindkey "[3~" delete-char
+[[ -n "${key[Delete]}" ]] && bindkey -- "${key[Delete]}" delete-char
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
+	autoload -Uz add-zle-hook-widget
+	function zle_application_mode_start { echoti smkx }
+	function zle_application_mode_stop { echoti rmkx }
+	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
+	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+fi
 
 # Force silly programs to support XDG base directories instead of littering ~
 export NPM_CONFIG_USERCONFIG="${XDG_DATA_HOME:-$HOME/.local/share}/npm/npmrc"
