@@ -28,6 +28,9 @@ alias rm="rm -Iv --one-file-system"
 #Allow sudo to accept aliases, like the ones above ^^^
 alias sudo="sudo "
 
+#Make rg use smart case
+alias rg="rg --smart-case"
+
 #Add colour to the ip command
 alias ip="ip -c=auto -h"
 
