@@ -49,3 +49,6 @@ alias vimdot="EDITOR=\$(command -v \$EDITOR) vimdot"
 unigcc() {
     gcc -Wall -ansi -pedantic-errors -o $(echo $1 | sed "s/\.c$//") $@
 }
+
+#Because Arch uses dynamic linking for Haskell
+alias ghc="ghc -dynamic"
