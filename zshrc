@@ -183,6 +183,7 @@ export STACK_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}"/stack
 export GHCUP_USE_XDG_DIRS=1
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="${XDG_CONFIG_HOME:-$HOME/.config}"/java
 export SQLITE_HISTORY="${XDG_STATE_HOME:-$HOME/.local/state}"/sqlite_history
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"/cargo
 
 # Support a local zsh config that isn't tracked in git
 if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/zsh/localzshrc ]]; then
