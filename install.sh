@@ -20,6 +20,7 @@ mkdir -p "$CONFIG/neofetch"
 
 ln -sr "$PWD/zshrc" "$ZDOTDIR/.zshrc"
 ln -sr "$PWD/aliasrc" "$CONFIG/zsh/aliasrc"
+ln -sr "$PWD/envrc" "$CONFIG/zsh/envrc"
 ln -sr "$PWD/nanorc" "$CONFIG/nano/nanorc"
 ln -sr "$PWD/machine-colours" "$CONFIG/zsh/machine-colours"
 ln -sr "$PWD/neofetch_config.conf" "$CONFIG/neofetch/config.conf"

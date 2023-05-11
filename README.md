@@ -10,6 +10,7 @@ destinations from the files in this repo
     * This zshrc will create ~/.local/state/zsh/history
     * This zshrc has some dependencies, see the file for details
 * aliasrc → ~/.config/zsh/aliasrc
+* envrc → ~/.config/zsh/envrc
 * nanorc → ~/.config/nano/nanorc
 * machine-colours → ~/.config/zsh/machine-colours
 * neofetch_config.conf → ~/.config/neofetch/config.conf
