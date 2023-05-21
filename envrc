@@ -15,3 +15,4 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$CONFIG"/java
 export SQLITE_HISTORY="$STATE"/sqlite_history
 export CARGO_HOME="$DATA"/cargo
 export GTK2_RC_FILES="$CONFIG"/gtk-2.0/gtkrc
+export GNUPGHOME="$DATA"/gnupg
