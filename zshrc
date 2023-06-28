@@ -68,27 +68,7 @@ add-zsh-hook -Uz precmd reset_rps1_precmd
 add-zsh-hook -Uz precmd timer_precmd
 add-zsh-hook -Uz preexec timer_preexec
 
-# Greeting
-hostname="$HOST" # in bash, this would be $HOSTNAME
-                 # not that that matters for a .zshrc
-date=$(date)
-greeting="\033[1m$fg[white]* You are $fg[$USERNAME_COLOUR]${USER} $fg[white]on $fg[$HOSTNAME_COLOUR]${hostname}$fg[white] using $fg[$SHELLNAME_COLOUR]zsh$fg[white] ("
-endofgreeting=")\033[0m"
-echo -e $greeting$date$endofgreeting
-
-# Complain if systemctl says the system is running
-# E.g. “System is degraded! (see systemctl)” if a service failed
-sysstatus=$(systemctl is-system-running)
-
-if [ "$sysstatus" = running ]; then
-    true
-else
-    echo -e "\033[1m$fg[red]System is $sysstatus! (see systemctl)\033[0m"
-fi
-
-unset greeting date endofgreeting sysstatus
 #unset USERNAME_COLOUR HOSTNAME_COLOUR SHELLNAME_COLOUR PATH_COLOUR END_OF_PROMPT_COLOUR RETURN_COLOUR TIME_COLOUR
-
 
 # Load aliases and shortcuts from ~/.config/zsh
 ALIASRC="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliasrc"
