@@ -10,11 +10,11 @@
 # * red
 # * white
 # * yellow
-export USERNAME_COLOUR=yellow
-export HOSTNAME_COLOUR=cyan
-export SHELLNAME_COLOUR=magenta
-export PATH_COLOUR=green
+USERNAME_COLOUR=yellow
+HOSTNAME_COLOUR=cyan
+SHELLNAME_COLOUR=magenta
+PATH_COLOUR=green
 # The $ at the end of the prompt (or # if you're root)
-export END_OF_PROMPT_COLOUR=yellow
-export RETURN_COLOUR=red
-export TIME_COLOUR=cyan
+END_OF_PROMPT_COLOUR=yellow
+RETURN_COLOUR=red
+TIME_COLOUR=cyan
