@@ -13,6 +13,7 @@ destinations from the files in this repo
 * envrc → ~/.config/zsh/envrc
 * nanorc → ~/.config/nano/nanorc
 * machine-colours → ~/.config/zsh/machine-colours
+* dircolors → ~/.config/zsh/dircolors
 * neofetch_config.conf → ~/.config/neofetch/config.conf
 
 * _if `XDG_CONFIG_HOME` is set, anything I said goes in `~/.config` goes there instead_
