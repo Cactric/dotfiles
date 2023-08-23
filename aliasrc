@@ -2,7 +2,8 @@
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    file="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/dircolors"
+    test -r "$file" && eval "$(dircolors -b "$file")" || eval "$(dircolors -b)"
     alias ls='ls --human-readable --color=auto -v'
 
     alias grep='grep --color=auto'
