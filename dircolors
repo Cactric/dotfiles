@@ -233,5 +233,5 @@ EXEC 01;32
 # config specific to those matching environment variables.
 
 # End of default entries 
-.pacnew 04;31
+.pacnew 04;38;5;166
 .pacsave 04;31
