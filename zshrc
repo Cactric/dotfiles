@@ -94,9 +94,6 @@ else
    fi
 fi
 
-# Add ~/.local/bin to the path
-[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
-
 # Make the up key search through history with what was already written
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
