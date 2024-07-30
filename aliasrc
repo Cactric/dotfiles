@@ -57,3 +57,4 @@ unigcc() {
 #Because Arch uses dynamic linking for Haskell
 alias ghc="ghc -dynamic"
 
+alias mksv="btrfs subvolume create"
