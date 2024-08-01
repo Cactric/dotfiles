@@ -19,6 +19,7 @@ export GNUPGHOME="$DATA"/gnupg
 export LESSHISTFILE="$DATA/lesshst"
 export JUPYTER_PLATFORM_DIRS=1
 #export PARALLEL_HOME="$CONFIG/parallel"
+export WGETRC="$CONFIG/wgetrc"
 
 # Add ~/.local/bin to the path
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
