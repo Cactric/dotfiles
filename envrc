@@ -9,14 +9,13 @@ STATE="${XDG_STATE_HOME:-$HOME/.local/state}"
 export NPM_CONFIG_USERCONFIG="$DATA"/npm/npmrc
 export GOPATH="$DATA/go"
 export GRADLE_USER_HOME="$DATA"/gradle
-export STACK_ROOT="$DATA"/stack
+export STACK_XDG=1
 export GHCUP_USE_XDG_DIRS=1
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$CONFIG"/java
 export SQLITE_HISTORY="$STATE"/sqlite_history
 export CARGO_HOME="$DATA"/cargo
 export GTK2_RC_FILES="$CONFIG"/gtk-2.0/gtkrc
 export GNUPGHOME="$DATA"/gnupg
-export LESSHISTFILE="$DATA/lesshst"
 export JUPYTER_PLATFORM_DIRS=1
 #export PARALLEL_HOME="$CONFIG/parallel"
 export WGETRC="$CONFIG/wgetrc"
