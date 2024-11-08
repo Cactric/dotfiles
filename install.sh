@@ -15,6 +15,7 @@ mkdir -p "$CONFIG/zsh"
 mkdir -p "$STATE/zsh"
 mkdir -p "$CONFIG/nano"
 mkdir -p "$CONFIG/neofetch"
+mkdir -p "$CONFIG/htop"
 
 # ln -sr: -r means relative links
 
@@ -25,3 +26,4 @@ ln -sr "$PWD/envrc" "$CONFIG/zsh/envrc"
 ln -sr "$PWD/nanorc" "$CONFIG/nano/nanorc"
 ln -sr "$PWD/machine-colours" "$CONFIG/zsh/machine-colours"
 ln -sr "$PWD/neofetch_config.conf" "$CONFIG/neofetch/config.conf"
+ln -sr "$PWD/htoprc" "$CONFIG/htop/htoprc"
