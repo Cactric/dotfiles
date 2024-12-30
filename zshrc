@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}"/zsh/history
-HISTSIZE=20000
-SAVEHIST=20000
+HISTSIZE=10100
+SAVEHIST=10000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
