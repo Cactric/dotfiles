@@ -58,3 +58,5 @@ unigcc() {
 alias ghc="ghc -dynamic"
 
 alias mksv="btrfs subvolume create"
+
+alias fetchall="find ~/Documents/Code/ -type d -name .git -print -execdir git fetch \;"
