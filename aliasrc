@@ -27,7 +27,7 @@ alias mv="mv -iv"
 alias rm="rm -Iv --one-file-system"
 
 #Ignore temporary file systems with df
-alias df="df -x tmpfs -x devtmpfs"
+alias df="df -x tmpfs -x devtmpfs -x efivarfs"
 
 #Allow sudo to accept aliases, like the ones above ^^^
 alias sudo="sudo "
