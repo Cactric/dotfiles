@@ -5,7 +5,7 @@ SAVEHIST=10000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '$HOME/.zshrc'
+zstyle :compinstall filename '$HOME/Documents/Code/git/cactric/dotfiles/zshrc'
 
 autoload -Uz compinit
 compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}"/zcompdump-$ZSH_VERSION
